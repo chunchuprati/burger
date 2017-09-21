@@ -10,7 +10,7 @@ create table burgers (
     
     burger_name varchar(30),
     
-    devoured boolean default false,
+    devoured boolean,
     
     date timestamp,
     
