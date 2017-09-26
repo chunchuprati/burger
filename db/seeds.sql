@@ -4,3 +4,5 @@ insert into burgers(burger_name)
 			("Veggie burger"),
             ("Chicken Teriyaki Burger"),
             ("Ham Burger");
+            
+#select * from burgers_db.burgers;
