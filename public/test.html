@@ -23,26 +23,32 @@
     <div class="container">
         
         <div class="jumbotron">
-            <img src="assets/img/burger.jpg" alt="burger">
+            <img src="assets/img/background.jpg" alt="burger">
             <h3>Eat-Da-Burger!</h3>
         </div>
       
     
     
         <div class = "col-md-4 col-md-offset-1">
+            <h2>Ready To Eat-Da-Burger </h2>
             <div class = "panel-panel default">
                 <ol class = "list-group">
-                    
                             <li class = "list-group-item">
-                                <div class="input-group">
+                                <!-- <div class="input-group"> -->
                                     <p class = "lead"></p>
                                     <span class = "input-group-btn">
+                                    <form class="form-inline" action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+                                            <!-- <label class="sr-only" for="inlineFormInput">Name</label> -->
+                                            <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Cheese Burger">
+                                    <!-- <span class = "input-group-btn">
                                         <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
                                             <input type="hidden" name="devoured" value ="true"/>
                                             <button class="btn btn-success" type="submit">EAT IT!</button>
                                         </form>
-                                    </span>
-                                </div>
+                                    </span> -->
+                                    <button type="submit" class="btn btn-primary">EAT IT!</button>
+                                </span>
+                                <!-- </div> -->
                             </li>
                       
                 </ol>
@@ -52,15 +58,22 @@
     
     
         <div class = "row">
+            <h2>Devoured Burgers</h2>
             <div class = "col-md-4 col-md-offset-2">
                 <div class = "panel-panel default">
                     <ol class = "list-group">
                        
                                 <li class="list-group-item">
                                     <p class = "lead"></p>
+                                    <form class="form-inline" action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+                                        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 devour" id="inlineFormInput" name="devoured" placeholder="Cheese Burger">
                                 </li>
                       
                     </ol>
+                    <!-- <form class="form-inline" action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+                        <label class="sr-only" for="inlineFormInput">Name</label>
+                        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 devour" id="inlineFormInput" name="devoured" placeholder="Cheese Burger">
+                    </form> -->
                 </div>
             </div>
         </div>
@@ -69,12 +82,12 @@
         <div class="col-md-10 col-md-offset-1">
              
            
-            <form class="create-form" action="burgers/create" method="POST">
+            <form class="create-form enter" action="burgers/create" method="POST">
                 <div class="form-group">
-                    <textarea class="form-control input-lg" type="text" name="b_name" rows="3" cols="2"></textarea>
+                    <textarea class="form-control" type="text" name="b_name" rows="3" cols="2"></textarea>
                 </div>
+                <p class="lead" id="title"> Enter the name of the burger you want to eat </p>
                 <button class = "btn btn-primary" type="submit">Submit</button>
-                <p class="lead"> Enter the name of the burger you want to eat </p>
             </form>
         </div>
     </div>

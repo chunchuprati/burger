@@ -2,14 +2,16 @@
     text-align: center;
 }
 body{
-    background: #E8B92D;
+    background: black;
     font-family: "Helvetica Neue",Helvetica,Arial, sans-serif;
     font-size: 14px;
     line-height: 1.2em;
     color:#333;
 }
 .jumbotron{
-    background-color: #E8B92D;
+    background-image: url(../img/background.jpg);
+    margin-top:20px;
+    background-attachment: cover;
 }
 img{
     width:150px;
@@ -17,4 +19,29 @@ img{
 }
 h3{
     color:orangered;
+}
+p{
+    color:#fff;
+}
+.enter{
+    margin-top:30px;
+}
+.devour{
+    margin-top: 10px;
+}
+
+.list-group-item{
+    background:black;
+    border: none;
+}
+.btn{
+    margin-left:5px;
+}
+
+.newBurgerDetails{
+    margin-bottom: 20px; 
+}
+
+.addedBurger{
+    text-align: left;
 }

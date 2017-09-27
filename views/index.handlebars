@@ -1,27 +1,29 @@
 <div class="container">
     {{!-- heading of the page --}}
     <div class="jumbotron">
-        <img src="/assets/img/burger.jpg" alt="burger">
+        <img src="/assets/img/background.jpg" alt="burger">
         <h3>Eat-Da-Burger!</h3>
     </div>
   
 {{!-- Update burger details --}}
 
     <div class = "col-md-4 col-md-offset-1">
+        <h2>Ready To Eat-Da-Burger </h2>
         <div class = "panel-panel default">
             <ol class = "list-group">
                 {{#each burgers}}
                     {{#unless this.devoured}}
                         <li class = "list-group-item">
-                            <div class="input-group">
-                                <p class = "lead">{{this.burger_name}}</p>
+                            {{!-- <div class="input-group"> --}}
+                                {{!-- <p class = "lead">{{this.burger_name}}</p> --}}
                                 <span class = "input-group-btn">
-                                    <form action="burgers/{{this.id}}?_method=PUT" method="POST">
-                                        <input type="hidden" name="devoured" value ="true">
+                                    <form class="form-inline" action="burgers/{{this.id}}?_method=PUT" method="POST">
+                                        {{!-- <input type="hidden" name="devoured" value ="true"> --}}
+                                        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" name = "devoured" value="{{this.burger_name}}">
                                         <button class="btn btn-success" type="submit">EAT IT!</button>
                                     </form>
                                 </span>
-                            </div>
+                            {{!-- </div> --}}
                         </li>
                     {{/unless}}
                 {{/each}}
@@ -33,12 +35,14 @@
 
     <div class = "row">
         <div class = "col-md-4 col-md-offset-2">
+            <h2>Devoured Burgers</h2>
             <div class = "panel-panel default">
                 <ol class = "list-group">
                     {{#each burgers}}
                         {{#if this.devoured}}
                             <li class="list-group-item">
-                                <p class = "lead">{{this.burger_name}}</p>
+                                <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" value="{{this.burger_name}}"/>
+                                {{!-- <p class = "lead">{{this.burger_name}}</p> --}}
                             </li>
                         {{/if}}
                     {{/each}}
@@ -48,15 +52,15 @@
     </div>
 
 {{!-- Enter the burger details --}}
-    <div class="col-md-10 col-md-offset-1">
+    <div class="col-md-10 col-md-offset-1 newBurgerDetails">
        
         {{!-- Create form --}}
-        <form class="create-form" action="burgers/" method="POST">
+        <form class="form-inline" action="burgers/" method="POST">
+            <p class="lead"> Enter a burger you want to eat Click the "Submit" button</p>
             <div class="form-group">
-                <textarea class="form-control input-lg" type="text" name="b_name" rows="3"></textarea>
+                <input class="form-control mb-2 mr-sm-2 mb-sm-0" type="text" name="b_name"/>
             </div>
             <button class = "btn btn-primary" type="submit">Submit</button>
-             <p class="lead"> Enter a burger you want to eat Click the "Submit" button</p>
         </form>
     </div>
 </div>
