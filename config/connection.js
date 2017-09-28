@@ -15,7 +15,7 @@ if (process.env.CLEARDB_DATABASE_URL) { // if you are using clearDB - you will u
     connection = mysql.createConnection({
         host:'localhost',
         user:'root',
-        password:'',
+        password:'test',
         database:'burgers_db'
     });
 }; 
