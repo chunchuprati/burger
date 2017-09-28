@@ -1,11 +1,6 @@
 var mysql = require('mysql');
 
-// var connection = mysql.createConnection({
-//     host:'localhost',
-//     user:'root',
-//     password:'',
-//     database:'burgers_db'
-// });
+var connection;
 
 if (process.env.CLEARDB_DATABASE_URL) { // if you are using clearDB - you will use the cleardb url - see the config vars
     // We are in production
@@ -18,10 +13,10 @@ if (process.env.CLEARDB_DATABASE_URL) { // if you are using clearDB - you will u
 } else {
     // We are in a local environment
     connection = mysql.createConnection({
-        host: "localhost",
-        user: "bb03b69f87c69c",
-        password: "2eb609c6",
-        database: "heroku_d3d4e2bebcc870d"
+        host:'localhost',
+        user:'root',
+        password:'test',
+        database:'burgers_db'
     });
 }; 
 
